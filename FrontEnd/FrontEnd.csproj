@@ -1,0 +1,824 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{2132F75F-F055-47F2-83C5-62775FFCA878}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FrontEnd</RootNamespace>
+    <AssemblyName>FrontEnd</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet">
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.3.4.13329\lib\net45-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core">
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.3.4.13329\lib\net45-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.2\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Membership.OpenAuth.2.0.1\lib\net45\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\11.png" />
+    <Content Include="Images\14.png" />
+    <Content Include="Images\1Penguins.jpg" />
+    <Content Include="Images\2.png" />
+    <Content Include="Images\5.png" />
+    <Content Include="Images\6.png" />
+    <Content Include="Images\7.png" />
+    <Content Include="Images\9.png" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\air.png" />
+    <Content Include="Images\an-sang-icon.png" />
+    <Content Include="Images\anh-tour-1.png" />
+    <Content Include="Images\arr-blue.png" />
+    <Content Include="Images\arr-nhay-left.png" />
+    <Content Include="Images\arr-nhay-right.png" />
+    <Content Include="Images\arrow-icon.png" />
+    <Content Include="Images\arr_hotel_detail.png" />
+    <Content Include="Images\audult-icon.png" />
+    <Content Include="Images\avatar.png" />
+    <Content Include="Images\avtar.png" />
+    <Content Include="Images\b-da-huy-active.png" />
+    <Content Include="Images\b-da-huy.png" />
+    <Content Include="Images\b-da-thanh-toan-active.png" />
+    <Content Include="Images\b-da-thanh-toan.png" />
+    <Content Include="Images\b-doi-pass.png" />
+    <Content Include="Images\b-don-hang.png" />
+    <Content Include="Images\b-face-icon.png" />
+    <Content Include="Images\b-gplus.png" />
+    <Content Include="Images\b-huy.png" />
+    <Content Include="Images\b-in.png" />
+    <Content Include="Images\b-info.png" />
+    <Content Include="Images\b-khuyen-mai.png" />
+    <Content Include="Images\b-more-icon.png" />
+    <Content Include="Images\b-sua.png" />
+    <Content Include="Images\b-thoat.png" />
+    <Content Include="Images\b-tong-booking-active.png" />
+    <Content Include="Images\b-tong-booking.png" />
+    <Content Include="Images\b-twitter.png" />
+    <Content Include="Images\b-xem-don-hang.png" />
+    <Content Include="Images\ban-do-icon.png" />
+    <Content Include="Images\bang-gia-icon-active.png" />
+    <Content Include="Images\bang-gia-icon.png" />
+    <Content Include="Images\bank-icon.png" />
+    <Content Include="Images\bank-logo-VCB.gif" />
+    <Content Include="Images\bank.png" />
+    <Content Include="Images\bghttt.jpg" />
+    <Content Include="Images\BIDV.gif" />
+    <Content Include="Images\book-button.png" />
+    <Content Include="Images\bre-bg.png" />
+    <Content Include="Images\bre-book-hotel-active.png" />
+    <Content Include="Images\bre-book-hotel.png" />
+    <Content Include="Images\bre-confirm-active.png" />
+    <Content Include="Images\bre-confirm.png" />
+    <Content Include="Images\bre-hotel-icon-active.png" />
+    <Content Include="Images\bre-hotel-icon.png" />
+    <Content Include="Images\bre-hotline-bg.png" />
+    <Content Include="Images\bre-hotline.png" />
+    <Content Include="Images\bre-next-active-pre.png" />
+    <Content Include="Images\bre-next-active.png" />
+    <Content Include="Images\bre-next.png" />
+    <Content Include="Images\bre-payment-active.png" />
+    <Content Include="Images\bre-payment.png" />
+    <Content Include="Images\bre-tour-active.png" />
+    <Content Include="Images\bre-tour-book-active.png" />
+    <Content Include="Images\bre-tour-book.png" />
+    <Content Include="Images\bre-tour.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\bus-icon.png" />
+    <Content Include="Images\calendar-icon.png" />
+    <Content Include="Images\child-icon.png" />
+    <Content Include="Images\chuyen-khoan.png" />
+    <Content Include="Images\confirm-bg.png" />
+    <Content Include="Images\contact-icon.png" />
+    <Content Include="Images\customer-avatar.png" />
+    <Content Include="Images\danh-gia-icon-active.png" />
+    <Content Include="Images\danh-gia-icon.png" />
+    <Content Include="Images\danh-gia-user-icon.png" />
+    <Content Include="Images\dat-phong-icon-active.png" />
+    <Content Include="Images\dat-phong-icon.png" />
+    <Content Include="Images\dat-ve-may-bay.jpg" />
+    <Content Include="Images\dia-chi-khach.png" />
+    <Content Include="Images\dia-danh-img.png" />
+    <Content Include="Images\dich-vu-visa-ho-chieu-1.jpg" />
+    <Content Include="Images\dich-vu-visa-ho-chieu-2.jpg" />
+    <Content Include="Images\down-icon.png" />
+    <Content Include="Images\dv-di-kem.png" />
+    <Content Include="Images\extra-info-icon.png" />
+    <Content Include="Images\f-car-icon-active.png" />
+    <Content Include="Images\f-car-icon.png" />
+    <Content Include="Images\f-hotel-icon-active.png" />
+    <Content Include="Images\f-hotel-icon.png" />
+    <Content Include="Images\f-tour-icon-active.png" />
+    <Content Include="Images\f-tour-icon.png" />
+    <Content Include="Images\face-icon.png" />
+    <Content Include="Images\Favicon.png" />
+    <Content Include="Images\favorite.png" />
+    <Content Include="Images\flight-icon.png" />
+    <Content Include="Images\fs-bg.png" />
+    <Content Include="Images\fs-bottom.png" />
+    <Content Include="Images\fs-top.png" />
+    <Content Include="Images\gia-cao-nhat.png" />
+    <Content Include="Images\gia-thap.png" />
+    <Content Include="Images\gioi-thieu-icon-active.png" />
+    <Content Include="Images\gioi-thieu-icon.png" />
+    <Content Include="Images\go-top.png" />
+    <Content Include="Images\gplus-icon.png" />
+    <Content Include="Images\h-comment-icon.png" />
+    <Content Include="Images\h-img-2.png" />
+    <Content Include="Images\h-img-3.png" />
+    <Content Include="Images\h-khuyen-mai-active.png" />
+    <Content Include="Images\h-khuyen-mai.png" />
+    <Content Include="Images\h-like-icon.png" />
+    <Content Include="Images\h-share-icon.png" />
+    <Content Include="Images\h-video-icon-active.png" />
+    <Content Include="Images\h-video-icon.png" />
+    <Content Include="Images\h-video.png" />
+    <Content Include="Images\h-view-icon.png" />
+    <Content Include="Images\header-online-support.png" />
+    <Content Include="Images\help-icon.png" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\history-icon.png" />
+    <Content Include="Images\ho-tro-truc-tuyen.png" />
+    <Content Include="Images\home-bg.png" />
+    <Content Include="Images\home-icon.png" />
+    <Content Include="Images\home-title-bg.png" />
+    <Content Include="Images\Home_10.png" />
+    <Content Include="Images\hotel-img-1.png" />
+    <Content Include="Images\HotelImages\11Chrysanthemum.jpg" />
+    <Content Include="Images\HotelImages\11Desert.jpg" />
+    <Content Include="Images\HotelImages\11eed2.jpg" />
+    <Content Include="Images\HotelImages\11hoian-1.jpg" />
+    <Content Include="Images\HotelImages\11hoian.jpg" />
+    <Content Include="Images\HotelImages\11hue.jpg" />
+    <Content Include="Images\HotelImages\11Hydrangeas.jpg" />
+    <Content Include="Images\HotelImages\11Jellyfish.jpg" />
+    <Content Include="Images\HotelImages\15940678.jpg" />
+    <Content Include="Images\HotelImages\19W.jpg" />
+    <Content Include="Images\HotelImages\1a4dadac9523682afa37b687038b34c02.jpg" />
+    <Content Include="Images\HotelImages\1AA.jpg" />
+    <Content Include="Images\HotelImages\1AE.jpg" />
+    <Content Include="Images\HotelImages\1AF.jpg" />
+    <Content Include="Images\HotelImages\1BA.jpg" />
+    <Content Include="Images\HotelImages\1banner.png" />
+    <Content Include="Images\HotelImages\1BL.jpg" />
+    <Content Include="Images\HotelImages\1BR.jpg" />
+    <Content Include="Images\HotelImages\1CA.jpg" />
+    <Content Include="Images\HotelImages\1CI.jpg" />
+    <Content Include="Images\HotelImages\1ContinentalAirlines.jpg" />
+    <Content Include="Images\HotelImages\1CX.jpg" />
+    <Content Include="Images\HotelImages\1CZ.jpg" />
+    <Content Include="Images\HotelImages\1DL.jpg" />
+    <Content Include="Images\HotelImages\1EK.jpg" />
+    <Content Include="Images\HotelImages\1Ha.Noi.Pearl..jpg" />
+    <Content Include="Images\HotelImages\1hoian.jpg" />
+    <Content Include="Images\HotelImages\1HX.jpg" />
+    <Content Include="Images\HotelImages\1IT.jpg" />
+    <Content Include="Images\HotelImages\1JC.jpg" />
+    <Content Include="Images\HotelImages\1Jellyfish.jpg" />
+    <Content Include="Images\HotelImages\1KE.jpg" />
+    <Content Include="Images\HotelImages\1KQ.jpg" />
+    <Content Include="Images\HotelImages\1LH.jpg" />
+    <Content Include="Images\HotelImages\1tải.xuống.jpg" />
+    <Content Include="Images\HotelImages\2942392_v1_isq.jpeg" />
+    <Content Include="Images\HotelImages\321Desert.jpg" />
+    <Content Include="Images\HotelImages\361161_v1_isq.jpeg" />
+    <Content Include="Images\HotelImages\836ac8ffc6c1ff25936e674603295668.jpg" />
+    <Content Include="Images\HotelImages\9W.jpg" />
+    <Content Include="Images\HotelImages\a4dadac9523682afa37b687038b34c02.jpg" />
+    <Content Include="Images\HotelImages\AA.jpg" />
+    <Content Include="Images\HotelImages\bank-logo-acb.gif" />
+    <Content Include="Images\HotelImages\bank-logo-AGR.gif" />
+    <Content Include="Images\HotelImages\bank-logo-BIDV.gif" />
+    <Content Include="Images\HotelImages\bank-logo-mtb.gif" />
+    <Content Include="Images\HotelImages\bank-logo-SCB.gif" />
+    <Content Include="Images\HotelImages\bank-logo-vib.gif" />
+    <Content Include="Images\HotelImages\bank-logo-VPB.gif" />
+    <Content Include="Images\HotelImages\bank-logo-VTB.gif" />
+    <Content Include="Images\HotelImages\banner.jpg" />
+    <Content Include="Images\HotelImages\BL.jpg" />
+    <Content Include="Images\HotelImages\CI.jpg" />
+    <Content Include="Images\HotelImages\CX.jpg" />
+    <Content Include="Images\HotelImages\CZ.jpg" />
+    <Content Include="Images\HotelImages\DL.jpg" />
+    <Content Include="Images\HotelImages\KE.jpg" />
+    <Content Include="Images\HotelImages\KQ.jpg" />
+    <Content Include="Images\HotelImages\P8.jpg" />
+    <Content Include="Images\HotelImages\TG.jpg" />
+    <Content Include="Images\HotelImages\UA.jpg" />
+    <Content Include="Images\HotelImages\VD.jpg" />
+    <Content Include="Images\Hotel\Star\1.png" />
+    <Content Include="Images\Hotel\Star\2.png" />
+    <Content Include="Images\Hotel\Star\3.png" />
+    <Content Include="Images\Hotel\Star\4.png" />
+    <Content Include="Images\Hotel\Star\5.png" />
+    <Content Include="Images\Hotel\Star\b-star-1.png" />
+    <Content Include="Images\Hotel\Star\b-star-2.png" />
+    <Content Include="Images\Hotel\Star\b-star-3.png" />
+    <Content Include="Images\Hotel\Star\b-star-4.png" />
+    <Content Include="Images\Hotel\Star\b-star-5.png" />
+    <Content Include="Images\Hotel\Star\star-0.png" />
+    <Content Include="Images\Hotel\Star\star-1.png" />
+    <Content Include="Images\Hotel\Star\star-2.png" />
+    <Content Include="Images\Hotel\Star\star-3.png" />
+    <Content Include="Images\Hotel\Star\star-4.png" />
+    <Content Include="Images\Hotel\Star\star-5.png" />
+    <Content Include="Images\Hotel_detail_datphong_03.png" />
+    <Content Include="Images\Hotel_detail_video_11.png" />
+    <Content Include="Images\hotline-icon.png" />
+    <Content Include="Images\hotline-pre.png" />
+    <Content Include="Images\houseIcon.png" />
+    <Content Include="Images\ht-img-1.png" />
+    <Content Include="Images\ht-img-2.png" />
+    <Content Include="Images\ht-img-3.png" />
+    <Content Include="Images\icon-avatar.png" />
+    <Content Include="Images\img-1-68.jpg" />
+    <Content Include="Images\img-1-70.jpg" />
+    <Content Include="Images\img-1.jpg" />
+    <Content Include="Images\img-2.jpg" />
+    <Content Include="Images\img-tour.jpg" />
+    <Content Include="Images\jestar-icon.png" />
+    <Content Include="Images\js-img-1.png" />
+    <Content Include="Images\js-img-2.png" />
+    <Content Include="Images\js-img-3.png" />
+    <Content Include="Images\js-img-4.png" />
+    <Content Include="Images\js-img-5.png" />
+    <Content Include="Images\key-icon.png" />
+    <Content Include="Images\khuyen-mai-icon-active.png" />
+    <Content Include="Images\khuyen-mai-icon.png" />
+    <Content Include="Images\less-icon.png" />
+    <Content Include="Images\link-list-icon.jpg" />
+    <Content Include="Images\loader6.gif" />
+    <Content Include="Images\loai-phong-icon-active.png" />
+    <Content Include="Images\loai-phong-icon.png" />
+    <Content Include="Images\local-icon.png" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Images\logo_gotrip.png" />
+    <Content Include="Images\mail-icon.png" />
+    <Content Include="Images\main-img-2.png" />
+    <Content Include="Images\main-img.png" />
+    <Content Include="Images\menu-left-active.png" />
+    <Content Include="Images\menu-left.png" />
+    <Content Include="Images\minus_orange.png" />
+    <Content Include="Images\more-icon-hover.png" />
+    <Content Include="Images\more-icon.png" />
+    <Content Include="Images\nav-bg.jpg" />
+    <Content Include="Images\newletter-bg.png" />
+    <Content Include="Images\next-icon.png" />
+    <Content Include="Images\next-iconx.png" />
+    <Content Include="Images\off-25-green.png" />
+    <Content Include="Images\off-25.png" />
+    <Content Include="Images\online-support-box-top.png" />
+    <Content Include="Images\opacity-grey-2.png" />
+    <Content Include="Images\opacity-grey.png" />
+    <Content Include="Images\opacity-white.png" />
+    <Content Include="Images\opacity.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="Images\p-dich-vu-icon.png" />
+    <Content Include="Images\p-do-xe-icon.png" />
+    <Content Include="Images\p-huy-icon.png" />
+    <Content Include="Images\p-more-icon.png" />
+    <Content Include="Images\p-oto-icon.png" />
+    <Content Include="Images\p-phong-icon.png" />
+    <Content Include="Images\p-wifi-icon.png" />
+    <Content Include="Images\password-icon.png" />
+    <Content Include="Images\payment.jpg" />
+    <Content Include="Images\person-amount.png" />
+    <Content Include="Images\person-icon.png" />
+    <Content Include="Images\phone-icon.png" />
+    <Content Include="Images\phong-img-1.png" />
+    <Content Include="Images\plus_orange.png" />
+    <Content Include="Images\postum-icon-active.png" />
+    <Content Include="Images\postum-icon.png" />
+    <Content Include="Images\postumtravel.ico" />
+    <Content Include="Images\preview-icon.png" />
+    <Content Include="Images\price-tag-blue.png" />
+    <Content Include="Images\price-tour-icon.png" />
+    <Content Include="Images\quote-icon-small.png" />
+    <Content Include="Images\quote-icon.png" />
+    <Content Include="Images\reply-icon.png" />
+    <Content Include="Images\s-calendar.png" />
+    <Content Include="Images\s-face-icon.png" />
+    <Content Include="Images\s-mail-icon.png" />
+    <Content Include="Images\s-phone-icon.png" />
+    <Content Include="Images\sao-icon-active.png" />
+    <Content Include="Images\sao-icon.png" />
+    <Content Include="Images\sap-khoi-hanh-icon-active.png" />
+    <Content Include="Images\sap-khoi-hanh-icon.png" />
+    <Content Include="Images\search-icon-active.png" />
+    <Content Include="Images\search-icon.gif" />
+    <Content Include="Images\search-icon.png" />
+    <Content Include="Images\slide-o-active.png" />
+    <Content Include="Images\slide-o.png" />
+    <Content Include="Images\so-phong-icon.png" />
+    <Content Include="Images\ss-hotel-active.png" />
+    <Content Include="Images\ss-hotel.png" />
+    <Content Include="Images\ss-search.png" />
+    <Content Include="Images\ss-tour-active.png" />
+    <Content Include="Images\ss-tour.png" />
+    <Content Include="Images\st-face-active.png" />
+    <Content Include="Images\st-face.png" />
+    <Content Include="Images\st-twitter-active.png" />
+    <Content Include="Images\st-twitter.png" />
+    <Content Include="Images\st-youtube-active.png" />
+    <Content Include="Images\st-youtube.png" />
+    <Content Include="Images\star-5.png" />
+    <Content Include="Images\star-hotel-1.gif" />
+    <Content Include="Images\star-hotel-2.gif" />
+    <Content Include="Images\star-hotel-3.gif" />
+    <Content Include="Images\star-hotel-4.gif" />
+    <Content Include="Images\star-hotel-5.gif" />
+    <Content Include="Images\star_4_5.png" />
+    <Content Include="Images\t-border-bottom.png" />
+    <Content Include="Images\t-border-left.png" />
+    <Content Include="Images\t-customer-icon.png" />
+    <Content Include="Images\t-support-icon.png" />
+    <Content Include="Images\tag-icon.png" />
+    <Content Include="Images\tai-postum.png" />
+    <Content Include="Images\talk-more-icon.png" />
+    <Content Include="Images\thanh-toan-img-1.png" />
+    <Content Include="Images\tick-active.png" />
+    <Content Include="Images\tick-icon.png" />
+    <Content Include="Images\time-icon.png" />
+    <Content Include="Images\title-bg.png" />
+    <Content Include="Images\top-icon.png" />
+    <Content Include="Images\tour-bg.png" />
+    <Content Include="Images\tour-icon-white.png" />
+    <Content Include="Images\tour-icon.png" />
+    <Content Include="Images\tour-img-1.png" />
+    <Content Include="Images\tour-img-2.png" />
+    <Content Include="Images\tour-list-icon-active.png" />
+    <Content Include="Images\tour-list-icon.png" />
+    <Content Include="Images\tour-new-img.png" />
+    <Content Include="Images\train-icon.png" />
+    <Content Include="Images\tu-van-img.png" />
+    <Content Include="Images\tut-icon.png" />
+    <Content Include="Images\twitter-icon.png" />
+    <Content Include="Images\username-icon.png" />
+    <Content Include="Images\uu-dai-icon.png" />
+    <Content Include="Images\view-icon.png" />
+    <Content Include="Images\views-count.png" />
+    <Content Include="Images\visa.jpg" />
+    <Content Include="Images\vp_hanoi.jpg" />
+    <Content Include="Images\vp_hcm.jpg" />
+    <Content Include="Images\wifi-icon.png" />
+    <Content Include="Images\xe-du-lich.jpg" />
+    <Content Include="Images\yahoo-icon.png" />
+    <Content Include="packages.config" />
+    <Content Include="Scripts\Default\Default.js" />
+    <Content Include="Scripts\Default\FormSearchSubColumn.js" />
+    <Content Include="Scripts\HotelDetail\HotelDetail.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.7.1.js" />
+    <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom.js" />
+    <Content Include="Scripts\jquery-ui-1.10.3.custom.min.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.js" />
+    <Content Include="Scripts\jquery-ui-1.8.20.min.js" />
+    <Content Include="Scripts\jquery-ui.min.js" />
+    <Content Include="Scripts\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="Scripts\jquery.mCustomScrollbar.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\jquery.mousewheel.min.js" />
+    <Content Include="Scripts\jquery.ui.datepicker-vi.js" />
+    <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\postum.js" />
+    <Content Include="Scripts\simplethumbs.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Source\Ajax\HotelAutoSuggest.aspx" />
+    <Content Include="Source\Home.aspx" />
+    <Content Include="Source\HotelDetail.aspx" />
+    <Content Include="Source\HotelList.aspx" />
+    <Content Include="Source\HotelPassenger.aspx" />
+    <Content Include="Source\HotelResult.aspx" />
+    <Content Include="Source\usrHome\usrformSearchHotel.ascx" />
+    <Content Include="Source\usrHotelDetail\usrCheckIn.ascx" />
+    <Content Include="Source\usrHotelDetail\usrHotelDetail.ascx" />
+    <Content Include="Source\usrHotelDetail\usrHotelImage.ascx" />
+    <Content Include="Source\usrHotelDetail\usrHotelIntroduction.ascx" />
+    <Content Include="Source\usrHotelList\usrHotelList.ascx" />
+    <Content Include="Styles\flick\images\animated-overlay.gif" />
+    <Content Include="Styles\flick\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\flick\images\ui-bg_flat_0_eeeeee_40x100.png" />
+    <Content Include="Styles\flick\images\ui-bg_flat_55_ffffff_40x100.png" />
+    <Content Include="Styles\flick\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Styles\flick\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Styles\flick\images\ui-bg_highlight-soft_100_f6f6f6_1x100.png" />
+    <Content Include="Styles\flick\images\ui-bg_highlight-soft_25_0073ea_1x100.png" />
+    <Content Include="Styles\flick\images\ui-bg_highlight-soft_50_dddddd_1x100.png" />
+    <Content Include="Styles\flick\images\ui-icons_0073ea_256x240.png" />
+    <Content Include="Styles\flick\images\ui-icons_454545_256x240.png" />
+    <Content Include="Styles\flick\images\ui-icons_666666_256x240.png" />
+    <Content Include="Styles\flick\images\ui-icons_ff0084_256x240.png" />
+    <Content Include="Styles\flick\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\flick\jquery-ui-1.10.3.custom.css" />
+    <Content Include="Styles\flick\jquery-ui-1.10.3.custom.min.css" />
+    <Content Include="Styles\jquery.mCustomScrollbar.css" />
+    <Content Include="Styles\postum.css" />
+    <Content Include="Styles\reset.css" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Bundle.config" />
+    <Content Include="_FrontEnd.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Styles\flick\images\.picasa.ini" />
+    <None Include="Scripts\_references.js" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Source\Ajax\HotelAutoSuggest.aspx.cs">
+      <DependentUpon>HotelAutoSuggest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Source\Ajax\HotelAutoSuggest.aspx.designer.cs">
+      <DependentUpon>HotelAutoSuggest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Source\Helper\FormatHelper.cs" />
+    <Compile Include="Source\Helper\UrlHelper.cs" />
+    <Compile Include="Source\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Source\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Source\HotelDetail.aspx.cs">
+      <DependentUpon>HotelDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Source\HotelDetail.aspx.designer.cs">
+      <DependentUpon>HotelDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Source\HotelList.aspx.cs">
+      <DependentUpon>HotelList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Source\HotelList.aspx.designer.cs">
+      <DependentUpon>HotelList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Source\HotelPassenger.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>HotelPassenger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Source\HotelPassenger.aspx.designer.cs">
+      <DependentUpon>HotelPassenger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Source\HotelResult.aspx.cs">
+      <DependentUpon>HotelResult.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Source\HotelResult.aspx.designer.cs">
+      <DependentUpon>HotelResult.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Source\usrHome\usrformSearchHotel.ascx.cs">
+      <DependentUpon>usrformSearchHotel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Source\usrHome\usrformSearchHotel.ascx.designer.cs">
+      <DependentUpon>usrformSearchHotel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Source\usrHotelDetail\usrCheckIn.ascx.cs">
+      <DependentUpon>usrCheckIn.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Source\usrHotelDetail\usrCheckIn.ascx.designer.cs">
+      <DependentUpon>usrCheckIn.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Source\usrHotelDetail\usrHotelDetail.ascx.cs">
+      <DependentUpon>usrHotelDetail.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Source\usrHotelDetail\usrHotelDetail.ascx.designer.cs">
+      <DependentUpon>usrHotelDetail.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Source\usrHotelDetail\usrHotelImage.ascx.cs">
+      <DependentUpon>usrHotelImage.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Source\usrHotelDetail\usrHotelImage.ascx.designer.cs">
+      <DependentUpon>usrHotelImage.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Source\usrHotelDetail\usrHotelIntroduction.ascx.cs">
+      <DependentUpon>usrHotelIntroduction.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Source\usrHotelDetail\usrHotelIntroduction.ascx.designer.cs">
+      <DependentUpon>usrHotelIntroduction.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Source\usrHotelList\usrHotelList.ascx.cs">
+      <DependentUpon>usrHotelList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Source\usrHotelList\usrHotelList.ascx.designer.cs">
+      <DependentUpon>usrHotelList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="_FrontEnd.Master.cs">
+      <DependentUpon>_FrontEnd.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="_FrontEnd.Master.designer.cs">
+      <DependentUpon>_FrontEnd.Master</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{f71f8275-bc65-4819-8bb9-01609c439ea7}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Infrastructure\Infrastructure.csproj">
+      <Project>{c3cc2eed-0a5c-44c3-b19a-9f958d682dbc}</Project>
+      <Name>Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>15643</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:15643/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

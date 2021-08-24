@@ -1,0 +1,37 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="_PopUp.master.cs" Inherits="BackEnd._PopUp" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link rel="stylesheet" href="/Styles/style.default.css" type="text/css" />
+    <link rel="stylesheet" href="/Styles/style.customize.css" type="text/css" />
+    <script type="text/javascript" src="/Scripts/plugins/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/jquery.flot.min.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/jquery.flot.resize.min.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/jquery.tagsinput.min.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/charCount.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/ui.spinner.min.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/jquery.jgrowl.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/jquery.colorbox-min.js"></script>
+    <script type="text/javascript" src="/Scripts/custom/general.js"></script>
+    <script type="text/javascript" src="/Scripts/custom/forms.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:Literal Text="" ID="litNotify" runat="server" />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

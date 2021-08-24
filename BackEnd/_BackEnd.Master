@@ -1,0 +1,120 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="_BackEnd.master.cs" Inherits="BackEnd._BackEnd" %>
+
+<%@ Register Src="~/Source/Account/usrUserInfo.ascx" TagPrefix="uc1" TagName="usrUserInfo" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dat phong khach san</title>
+    <link rel="stylesheet" href="/Styles/style.default.css" type="text/css" />
+    <link rel="stylesheet" href="/Styles/style.customize.css" type="text/css" />    
+    <script type="text/javascript" src="/Scripts/plugins/jquery-1.7.min.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/jquery.uniform.min.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/jquery.flot.min.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/jquery.flot.resize.min.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/jquery.slimscroll.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/jquery.tagsinput.min.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/charCount.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/ui.spinner.min.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/jquery.jgrowl.js"></script>
+    <script type="text/javascript" src="/Scripts/plugins/jquery.colorbox-min.js"></script>
+    <script type="text/javascript" src="/Scripts/custom/general.js"></script>    
+    <script type="text/javascript" src="/Scripts/custom/forms.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.ui.datepicker-vi.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if (jQuery.datepicker != undefined) {
+                jQuery.datepicker.setDefaults(jQuery.datepicker.regional['vn']);
+                jQuery.datepicker.setDefaults(jQuery.datepicker.formatDate('dd/mm/yyyy'));
+            }            
+        });
+    </script>
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/plugins/excanvas.min.js"></script><![endif]-->
+    <!--[if IE 9]>
+    <link rel="stylesheet" media="screen" href="css/style.ie9.css"/>
+<![endif]-->
+    <!--[if IE 8]>
+    <link rel="stylesheet" media="screen" href="css/style.ie8.css"/>
+<![endif]-->
+    <!--[if lt IE 9]>
+	<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+<![endif]-->
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body class="withvernav">
+    <form id="form1" runat="server">
+        <div class="bodywrapper">
+            <div class="topheader">
+                <div class="left">
+                    <h1 class="logo"><a href="#" target="_blank">DatPhongKhachSan.<span>VN</span></a></h1>
+                    <span class="slogan">Admin System</span>
+
+                    <div class="search">                                              
+                        <asp:TextBox ID="keyword" value="mã đơn hàng, tên khách hàng ..." runat="server"></asp:TextBox>
+                        <asp:Button ID="btnSearch" Text="Search" runat="server" class="btnSearch" OnClick="btnSearch_Click"/>
+                    </div>
+                    <!--search-->
+
+                    <br clear="all" />
+
+                </div>
+                <!--left-->
+                <uc1:usrUserInfo runat="server" ID="usrUserInfo" />
+            </div>
+            <!--topheader-->
+            <!--header-->
+
+            <div class="vernav2 iconmenu">
+                <ul>
+                    <li><a href="#hotel" class="hotel">Khách sạn</a>
+                        <span class="arrow"></span>
+                        <ul id="hotel">
+                            <li><a href="/Source/HotelManager/ManagerHotel.aspx">Quản lý KHách sạn</a></li>
+                            <li><a href="/Source/HotelManager/AddNewHotel.aspx">Thêm mới Khách sạn</a></li>                            
+                            <li><a href="/Source/HotelManager/ManagerFeature.aspx">Tiện ích khách sạn</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#booking" class="elements">Đơn Hàng</a>
+                        <span class="arrow"></span>
+                        <ul id="booking">                            
+                            <li><a href="/Source/Booking/ManagerBooking.aspx">Đơn Hàng Khách Sạn</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#user" class="editor">Tài khoản</a>
+                        <span class="arrow"></span>
+                        <ul id="user">
+                            <li><a href="/Source/Account/AccountManager.aspx">Quản lý tài khoản</a></li>      
+                            <li><a href="/Source/Account/EditProfile.aspx">Sửa thông tin cá nhân</a></li>                            
+                        </ul>
+                    </li>
+                </ul>
+                <a class="togglemenu"></a>
+                <br />
+                <br />
+            </div>
+            <!--leftmenu-->
+
+            <div class="centercontent" style="padding:5px;">
+                <asp:Literal Text="" ID="litNotify" runat="server" />
+                <div id="contentwrapper" class="contentwrapper">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+                </div>
+                <br clear="all" />
+
+            </div>
+            <!-- centercontent -->
+        </div>
+        <!--bodywrapper-->
+
+    </form>
+</body>
+</html>

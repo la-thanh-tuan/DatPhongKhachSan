@@ -1,0 +1,100 @@
+﻿/***** 19. STANDARD TABLES STYLES *****/
+/**************************************/
+
+.dg-backend { width: 100%;}
+.dg-backend td { line-height: 21px; vertical-align: middle; color: #333; } 
+.dg-backend td input[type="text"] { border:1px solid #d4d4d4; color:#345f89;width:95%; height:20px; font-family:Tahoma; font-size:13px; padding-left:3px;}
+.dg-backend td input.button-dg, .dg-backend td input[type="image"] { border:none; height:auto; width:auto;}
+.head-dg-backend td { padding: 7px 10px; border: 1px solid #ddd; border-left: 0; 
+	text-align: left; background-color: #fcfcfc;
+    line-height: 21px; vertical-align: middle; color: #333; 
+    font-weight:bold; }
+.footer-dg-backend { padding: 7px 10px; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; text-align: left; background-color: #fcfcfc;}
+
+
+.grd-stdtable { width: 100%; }
+.grd-stdtable thead th.sorting, .grd-stdtable thead td.sorting { 
+	background-image: url(../images/sort_both.png); background-repeat: no-repeat; background-position: right center; }
+.grd-stdtable thead th.sorting_asc, .grd-stdtable thead td.sorting_asc { 
+	background-image: url(../images/sort_asc.png); background-repeat: no-repeat; background-position: right 9px; }
+.grd-stdtable thead th.sorting_desc, .grd-stdtable thead td.sorting_desc  { 
+	background-image: url(../images/sort_desc.png); background-repeat: no-repeat; background-position: right 9px; }
+.grd-stdtable thead th.nosort { background-image: none !important; }
+.grd-stdtable thead td { font-weight: bold; }
+.grd-stdtable thead td.center { text-align: center; }
+.grd-stdtable tbody tr td { padding: 8px 10px; border-right: 1px solid #eee; border-bottom: 1px solid #eee; color: #666; }
+.grd-stdtable tbody tr:last-child td { border-bottom: 1px solid #ddd; }
+.grd-stdtable tbody tr td:first-child { border-left: 1px solid #ddd; }
+.grd-stdtable tbody tr td:last-child { border-right: 1px solid #ddd; }
+.grd-stdtable tbody tr.togglerow td { background: #fff; padding: 15px; }
+.grd-stdtable tbody tr.togglerow:hover td { background: #fff; }
+.grd-stdtable tbody tr.hiderow { display: none; }
+.grd-stdtable .actions { text-align: center; }
+.grd-stdtable .actions a { display: inline-block; margin-left: 5px; border-left: 1px solid #ccc; padding-left: 5px; }
+.grd-stdtable .actions a:first-child { border-left: 0; margin-left: 0; }
+.grd-stdtable .actions a:hover { color: #FB9337; }
+.grd-stdtable a.title { font-weight: bold; color: #32415a; }
+.grd-stdtable a.title:hover { color: #fb9337; }
+
+/*Footer and Header*/
+.head-grd-stdtable td { 
+	padding: 7px 10px; border: 1px solid #ddd; border-left: 0; 
+	text-align: left; background-color: #fcfcfc;
+    line-height: 21px; vertical-align: middle; 
+    color: #333 !important; 
+    font-weight:bold;
+}
+.head-grd-stdtable td:first-child, .footer-grd-stdtable td:first-child { border-left: 1px solid #ddd; }
+
+.footer-grd-stdtable td { padding: 7px 10px; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; text-align: left; background-color: #fcfcfc;}
+/*end footer and header*/
+/*
+.tableoptions { 
+	background: #fcfcfc; border: 1px solid #ddd; border-bottom: 0; padding: 8px; 
+	-moz-border-radius: 0 1px 0 #fff; -webkit-border-radius: 0 1px 0 #fff; border-radius: 0 1px 0 #fff;
+}
+.tableoptions button { 
+	background: #fcfcfc; font-size: 11px; color: #666; padding: 7px 10px; border: 1px solid #ccc; margin: 0; outline: none;
+	-moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px;
+}
+.tableoptions button:hover { background: #eee; cursor: pointer; }
+.tableoptions select { 
+	background: #fff; padding: 6px 5px 7px 5px; border: 1px solid #ccc; margin: 0; outline: none; font-size: 11px; color: #666;
+	-moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px;
+}
+
+.dataTables_wrapper { position: relative; }
+.dataTables_length { background: #fcfcfc; border: 1px solid #ddd; border-bottom: 0; padding: 8px; }
+.dataTables_paginate { background: #fcfcfc; border: 1px solid #ddd; border-top: 0; padding: 8px; }
+.dataTables_length, .dataTables_paginate { -moz-box-shadow: inset 0 1px 0 #fff; -webkit-box-shadow: inset 0 1px 0 #fff; box-shadow: inset 0 1px 0 #fff; }
+.dataTables_wrapper select { 
+	background: #fff; padding: 5px; border: 1px solid #bbb; margin: 0; outline: none; font-size: 11px; color: #666;
+	-moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; margin: 0 5px;
+}
+.dataTables_wrapper input { border: 1px solid #ddd; padding: 7px 5px 8px 5px; width: 200px; background: #fff; }
+.dataTables_filter { position: absolute; top: 7px; right: 8px; }
+.dataTables_info { position: absolute; bottom: 13px; left: 8px; }
+.dataTables_paginate { text-align: right; line-height: 16px; }
+.dataTables_paginate span { display: inline-block; }
+.dataTables_paginate .paginate_button { 
+	border: 1px solid #ccc; padding: 5px 7px; margin-left: 5px; font-weight: bold; background: #fcfcfc; 
+	-moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px;  font-size: 11px;
+	-moz-box-shadow: 1px 1px 2px #ddd; -webkit-box-shadow: 1px 1px 2px #ddd; box-shadow: 1px 1px 2px #ddd; 
+}
+.dataTables_paginate .paginate_active { 
+	border: 1px solid #F0882C; background: #F0882C;  color: #fff; padding: 5px 7px; margin-left: 5px; font-weight: bold; 
+	-moz-border-radius: 2px; -webkit-border-radius: 2px; border-radius: 2px; font-size: 11px;
+}
+.dataTables_paginate .paginate_button:hover { background: #ddd; border: 1px solid #ccc; cursor: pointer; color: #333; }
+    */
+/***** btnSearch *****/
+/**************************************/
+
+
+.btnSearch {
+            height: 46px;
+            font-size:24px;
+            margin-left: 15px !important;            
+            background-color: #445775 !important;
+            border: solid 1px #445775 !important;            
+        }

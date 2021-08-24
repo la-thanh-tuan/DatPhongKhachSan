@@ -1,0 +1,46 @@
+﻿.tableTab td .selector {
+    margin-top: -25px;
+    width: auto;
+}
+
+.tableTab {
+    display: table;
+    border-collapse: separate;
+    border-spacing: 5px;
+    border-color: gray;
+    margin-left: -5px;
+}
+
+.currentTab a {
+    width: 130px;
+    float: left;
+    font-weight: bold;
+    text-align: center;
+    background: #fb9337;
+    padding: 5px 20px;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #f0882c;
+}
+
+.tableTab td a {
+    width: 150px;
+    float: left;
+    text-align: center;
+    padding: 5px 20px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #d4d4d4;
+}
+
+    .tableTab td a:hover {
+        background: #666;
+        color: #fff;
+    }
+
+.stdtable a:-webkit-any-link {
+    color: -webkit-link;
+    text-decoration: underline;
+    cursor: auto;
+    font-weight: bold;
+}

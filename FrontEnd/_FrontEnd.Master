@@ -1,0 +1,182 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="_FrontEnd.master.cs" Inherits="FrontEnd._FrontEnd" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>
+        Dịch vụ đặt phòng giá rẻ!!!
+    </title>
+    <asp:Literal Text="" ID="litMetaDescription" runat="server" />
+    <asp:Literal Text="" ID="litMetaKeyword" runat="server" />
+    <link href="/images/postumtravel.ico" rel="shortcut icon" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="/Styles/reset.css" />
+    <link rel="stylesheet" type="text/css" href="/Styles/postum.css" />
+    <link rel="stylesheet" type="text/css" href="/Styles/jquery.mCustomScrollbar.css" />
+    <link rel="stylesheet" type="text/css" href="/Styles/flick/jquery-ui-1.10.3.custom.min.css" />
+    <script type="text/javascript" src="/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="/Scripts/postum.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery-ui-1.10.3.custom.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="/Scripts/simplethumbs.min.js"></script>
+    <script type="text/javascript" src="/Scripts/jquery.ui.datepicker-vi.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            if ($.datepicker != undefined) {
+                $.datepicker.setDefaults($.datepicker.regional['vn']);
+                $.datepicker.setDefaults($.datepicker.formatDate('dd/mm/yyyy'));
+            }
+            var url = window.location.pathname;
+            $('#menu ul li a').each(function () {
+                var href = $(this).attr('href');
+                if (href.toLowerCase() == url.toLowerCase()) {
+                    $('#menu ul li').removeClass('active');
+                    $(this).parent().addClass('active');
+                }
+            });
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="wrapper">
+            <!-- Top Div -->
+            <div class="full bg-gray" style="padding-bottom: 3px;">
+                <div class="container">
+                    <div id="po-top" class="c-content">
+                        <div class="left">
+                            <h1 id="meta">
+                               Dịch vụ đặt phòng giá rẻ!!!
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Top Div -->
+            <!-- Header -->
+            <div class="full bg-white shadow relative">
+                <div class="container">
+                    <div id="po-header" class="c-content">
+                        <a href="/" class="left">
+                            <img id="logo" src="/images/logo.png" alt="" />
+                        </a>
+                        <div class="support-info right">
+
+                            <ul class="main-color" style="font-weight: bold;">
+                                <li class="phone">TỔNG ĐÀI LIÊN HỆ : <b class="other-color">18001234</b></li>
+                                <li class="hotline">HOTLINE : <b class="other-color" style="float: right; display: inline-block">0989774788</b></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Header -->
+            <div class="full bg-main">
+                <div class="container">
+                    <div id="po-main" class="c-content">
+                        <!-- Menu -->
+                        <div id="menu" class="left shadow-0 radius-0-5">
+                            <ul class="left">
+                                <li class="first"><a href="/" title="Trang chủ">Trang chủ</a></li>
+                                <li><a href="gioi-thieu" title="Giới thiệu">Giới thiệu</a></li>
+                                <li><a href="/khach-san" title="Trang chủ">Khách sạn</a></li>
+                                <li class="last"><a href="lien-he" title="liên hệ">Liên hệ</a></li>
+                            </ul>
+                        </div>
+                        <!-- End Menu -->
+                        <!-- Sidebar contact -->
+                        <div class="sidebar-contact fixed" style="display: none;">
+                            <a href="#" title="">
+                                <img src="/images/s-phone-icon.png" alt="" /></a>
+                            <a href="#" title="">
+                                <img src="/images/s-mail-icon.png" alt="" /></a>
+                            <a href="#" title="">
+                                <img src="/images/s-face-icon.png" alt="" /></a>
+                        </div>
+
+                        <a id="go-top" class="fixed hide" href="#">
+                            <img src="/images/go-top.png" alt="" /></a>
+                        <!-- End Sidebar contact -->
+                        <div id="content" class="full relative">
+                            <asp:ContentPlaceHolder ID="contentMain" runat="server">
+                            </asp:ContentPlaceHolder>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Footer -->
+            <div class=" full bg-white">
+                <div class="container">
+                    <div id="po-footer" class="c-content cols_5">
+                        <div class="col-1 left">
+                            <p class="title">Về chúng tôi</p>
+                            <ul class="link">
+                                <li><a href="/gioi-thieu">Giới thiệu</a></li>
+                                <li><a href="/dia-danh-du-lich">Địa danh du lịch</a></li>
+                                <li><a href="/tu-van-du-lich">Tư vấn du lịch</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-2 right">
+                            <div id="newletters" class="right relative">
+                                <p class="title">Đăng ký nhận Email</p>
+                                <input type="text" name="" placeholder="Enter your email address here ..." id="" />
+                                <button class="button" type="submit">Đăng ký</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Footer -->
+            <!-- Bottom -->
+            <div class="full bg-gray">
+                <div class="container">
+                    <div id="po-address" class="c-content">
+                        <div class="office left">
+                            <img src="/images/vp_hanoi.jpg" class="left" alt="" />
+                            <div class="office-detail left">
+                                <p class="title">
+                                    <h3>Văn phòng tại Hà Nội</h3>
+                                </p>
+                                <p class="office-desc left">
+                                    Định Công - Quận Hoàng Mai - Hà Nội
+                                                    <br />
+                                    Tel: (+84.4)1234567890<br />
+                                    Fax: (+84.4) 1234567890<br />
+                                </p>
+                            </div>
+                        </div>
+                        <div class="office left">
+                            <img src="/images/vp_hcm.jpg" class="left" alt="" />
+                            <div class="office-detail left">
+                                <p class="title">
+                                    <h3>Văn phòng tại Hồ Chí Minh</h3>
+                                </p>
+                                <p class="office-desc">
+                                    Nguyễn Oanh - Quận Gò Vấp - TP. Hồ Chí Minh
+                                                    <br />
+                                    Tel: (+84.4)1234567890<br />
+                                    Fax: (+84.4) 1234567890<br />
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="full bg-gray border-top">
+                <div class="container">
+                    <div id="po-bottom" class="c-content">
+                        <span class="payment-method right">Chấp nhận thanh toán
+                            <img src="/images/payment.jpg" alt="" />
+                        </span>
+                    </div>
+                </div>
+            </div>
+<div style="display:inline;">
+</div>
+<%--</noscript>--%>
+            <!-- End Bottom -->
+        </div>
+    </form>
+</body>
+</html>
